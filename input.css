@@ -1,0 +1,59 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.cell {
+    background-color: transparent;
+    transition: background-color 10s ease-in-out;
+    border-color: #00000008;
+    border-width: 1px
+}
+
+.cell:hover{
+    background-color: #00000010;
+    transition: background-color .3s ease-in-out
+}
+
+@media (prefers-color-scheme: dark) {
+    .cell {
+        background-color:transparent;
+        transition: background-color .3s ease-in-out;
+        border-color: #ffffff04
+    }
+
+    .cell:hover {
+        background-color: #ffffff10;
+        transition: background-color .3s ease-in-out
+    }
+}
+
+.grid-container {
+    opacity: 1
+}
+
+.grid-container:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 35%;
+    background: linear-gradient(to bottom,transparent 50%,#020411 60%)
+}
+
+.animation{
+    animation: rtl 15s linear infinite;
+}
+
+@keyframes rtl {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
